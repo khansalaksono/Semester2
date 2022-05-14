@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.*;
 
 public class PenjurianSeleksi {
@@ -21,9 +22,9 @@ public class PenjurianSeleksi {
         }
 
         String cekNama = input.next();
-
+        
         //sorting dkk
-        PenjurianSeleksi sorter = new PenjurianSeleksi();
+        Solution sorter = new Solution();
         sorter.insertion_sort(B, A, nama, jumlah);
 
         int posisiPeserta = sorter.check_name(cekNama, nama);
@@ -33,7 +34,7 @@ public class PenjurianSeleksi {
             System.out.println("LOLOS");
         }
     }
-
+    
     void insertion_sort(double[] B, double[] A, String[] nama, double[] jumlah) {
         int size = jumlah.length;
 
@@ -56,7 +57,8 @@ public class PenjurianSeleksi {
             A[j + 1] = tempA;
             nama[j + 1] = tempNama;
         }
-
+    }
+    
     int check_name(String nama, String[] namaArray){
         int size = namaArray.length;
         for(int i = 0; i < size; i++){
